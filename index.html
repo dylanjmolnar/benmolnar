@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ben Molnar | Artist Portfolio</title>
+    <meta name="description" content="Portfolio of Ben Molnar showcasing Painted Art, Tattoo Art, Cardboard Designs, and Car Photography.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo"></div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="https://holowstreet.com" target="_blank" class="store-link">Shop Art</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1 class="animate-up" style="--delay: 0.1s">Ben Molnar</h1>
+            <p class="subtitle animate-up" style="--delay: 0.3s">Creator. Innovator. Engineer.</p>
+            <p class="description animate-up" style="--delay: 0.5s">Exploring my creativity through art, engineering, tattoos, and photography</p>
+            <div class="hero-buttons animate-up" style="--delay: 0.7s">
+                <a href="#portfolio" class="btn primary-btn">View Work</a>
+                <a href="assets/resume.pdf" download class="btn secondary-btn">Download Resume</a>
+                <a href="https://holowstreet.com" target="_blank" class="btn secondary-btn">Visit Store</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section reveal">
+        <div class="section-header">
+            <h2>Selected Works</h2>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="car">Car Photography</button>
+                <button class="filter-btn" data-filter="cardboard">Cardboard Designs</button>
+                <button class="filter-btn" data-filter="painted">Painted Art</button>
+                <button class="filter-btn" data-filter="tattoo">Tattoo Art</button>
+            </div>
+        </div>
+
+        <div class="gallery">
+            <!-- Items -->
+            <div class="gallery-item cardboard">
+                <img src="assets/images/cardboard_center_console.jpeg" alt="Cardboard Center Console" class="image gradient-1"></img>
+                <div class="item-overlay">
+                    <h3>Cardboard Center Console</h3>
+                    <p>Cardboard Design</p>
+                </div>
+            </div>
+            <div class="gallery-item cardboard">
+                <img src="assets/images/chair_image1.jpeg" alt="Cardboard  Chair" class="image gradient-1"></img>
+                <div class="item-overlay">
+                    <h3>Cardboard  Chair</h3>
+                    <p>Cardboard Design</p>
+                </div>
+            </div>
+            <div class="gallery-item cardboard">
+                <img src="assets/images/chair_image2.jpeg" alt="Cardboard Chair 2" class="image gradient-1"></img>
+                <div class="item-overlay">
+                    <h3>Cardboard Chair 2</h3>
+                    <p>Cardboard Design</p>
+                </div>
+            </div>
+            <!-- <div class="gallery-item tattoo">
+                <div class="image-placeholder gradient-2"></div>
+                <div class="item-overlay">
+                    <h3>Sleeve Design</h3>
+                    <p>Tattoo Art</p>
+                </div>
+            </div> -->
+            <div class="gallery-item car">
+                <img src="assets/images/photo_shoot.jpeg" alt="Car Photoshoot" class="image gradient-1"></img>
+                <div class="item-overlay">
+                    <h3>Photo Shoot</h3>
+                    <p>Car Photography</p>
+                </div>
+            </div>
+            <div class="gallery-item car">
+                <img src="assets/images/photo_shoot2.jpeg" alt="Car Photoshoot 2" class="image gradient-1"></img>
+                <div class="item-overlay">
+                    <h3>Photo Shoot 2</h3>
+                    <p>Car Photography</p>
+                </div>
+            </div>
+            <div class="gallery-item painted">
+                <img src="assets/images/skateboard.jpeg" alt="Painted Skateboard" class="image gradient-1"></img>
+                <div class="item-overlay">
+                    <h3>Painted Skateboard</h3>
+                    <p>Painted Art</p>
+                </div>
+            </div>
+            <div class="gallery-item painted">
+                <img src="assets/images/wall_art.jpeg" alt="Wall Art" class="image gradient-1"></img>
+                <div class="item-overlay">
+                    <h3>Wall Art</h3>
+                    <p>Painted Art</p>
+                </div>
+            </div>
+            <div class="gallery-item painted">
+                <img src="assets/images/wall_art2.jpeg" alt="Wall Art 2" class="image gradient-1"></img>
+                <div class="item-overlay">
+                    <h3>Wall Art 2</h3>
+                    <p>Painted Art</p>
+                </div>
+            </div>
+            <div class="gallery-item painted">
+                <img src="assets/images/wall_art3.jpeg" alt="Wall Art 3" class="image gradient-1"></img>
+                <div class="item-overlay">
+                    <h3>Wall Art 3</h3>
+                    <p>Painted Art</p>
+                </div>
+            </div>
+            <div class="gallery-item painted">
+                <img src="assets/images/wall_art4.jpeg" alt="Wall Art 4" class="image gradient-1"></img>
+                <div class="item-overlay">
+                    <h3>Wall Art 4</h3>
+                    <p>Painted Art</p>
+                </div>
+            </div>
+            <div class="gallery-item painted">
+                <img src="assets/images/wall_art5.jpeg" alt="Wall Art 5" class="image gradient-1"></img>
+                <div class="item-overlay">
+                    <h3>Wall Art 5</h3>
+                    <p>Painted Art</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section reveal">
+        <div class="cta-content glass-panel">
+            <h2>Support My Passion</h2>
+            <p>Browse original apparel, prints, and other cool stuff at Holow Street.</p>
+            <a href="https://holowstreet.com" target="_blank" class="btn primary-btn cta-btn">Visit holowstreet.com</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Ben Molnar</div>
+            <p>&copy; <span id="year"></span> Ben Molnar. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://instagram.com/bolnart">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Viewer Modal -->
+    <div id="image-viewer" class="image-viewer-modal">
+        <span class="close-viewer">&times;</span>
+        <img class="viewer-content" id="full-image">
+        <div id="viewer-caption"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
