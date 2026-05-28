@@ -53,15 +53,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Trigger once on load
     revealOnScroll();
 
-    // Image Viewer Logic
+    // Image/Video Viewer Logic
     const viewer = document.getElementById('image-viewer');
     const fullImage = document.getElementById('full-image');
+    const fullVideo = document.getElementById('full-video');
     const viewerCaption = document.getElementById('viewer-caption');
     const closeViewer = document.querySelector('.close-viewer');
-    const galleryImages = document.querySelectorAll('.gallery-item img');
+    const galleryMedia = document.querySelectorAll('.gallery-item img, .gallery-item video');
 
-    galleryImages.forEach(img => {
-        img.addEventListener('click', (e) => {
+    galleryMedia.forEach(media => {
+        media.addEventListener('click', (e) => {
             // Prevent event from bubbling up if necessary
             e.stopPropagation();
             viewer.style.display = 'flex';
@@ -69,8 +70,21 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 viewer.classList.add('open');
             }, 10);
-            fullImage.src = img.src;
-            viewerCaption.textContent = img.alt || img.parentElement.querySelector('h3').textContent;
+            
+            if (media.tagName === 'VIDEO') {
+                fullImage.style.display = 'none';
+                fullVideo.style.display = 'block';
+                fullVideo.src = media.src;
+                fullVideo.play();
+                viewerCaption.textContent = media.parentElement.querySelector('h3').textContent;
+            } else {
+                fullVideo.style.display = 'none';
+                fullVideo.pause();
+                fullImage.style.display = 'block';
+                fullImage.src = media.src;
+                viewerCaption.textContent = media.alt || media.parentElement.querySelector('h3').textContent;
+            }
+            
             document.body.style.overflow = 'hidden'; // Prevent scrolling
         });
     });
@@ -79,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         viewer.classList.remove('open');
         setTimeout(() => {
             viewer.style.display = 'none';
+            fullVideo.pause(); // Stop video if playing
         }, 300); // Wait for transition
         document.body.style.overflow = 'auto'; // Restore scrolling
     };
