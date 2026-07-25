@@ -59,30 +59,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const fullVideo = document.getElementById('full-video');
     const viewerCaption = document.getElementById('viewer-caption');
     const closeViewer = document.querySelector('.close-viewer');
-    const galleryMedia = document.querySelectorAll('.gallery-item img, .gallery-item video');
+    const galleryItemsList = document.querySelectorAll('.gallery-item');
 
-    galleryMedia.forEach(media => {
-        media.addEventListener('click', (e) => {
-            // Prevent event from bubbling up if necessary
+    galleryItemsList.forEach(item => {
+        item.addEventListener('click', (e) => {
             e.stopPropagation();
+            const media = item.querySelector('img, video');
+            if (!media) return;
+
             viewer.style.display = 'flex';
             // Slight delay to allow display:flex to apply before setting opacity for transition
             setTimeout(() => {
                 viewer.classList.add('open');
             }, 10);
             
+            const itemTitle = item.querySelector('h3') ? item.querySelector('h3').textContent : '';
+            const itemCategory = item.querySelector('p') ? item.querySelector('p').textContent : '';
+            
+            viewerCaption.innerHTML = `<h3>${itemTitle}</h3><p style="font-size:0.9rem; color:var(--accent-color); margin-top:4px; text-transform:uppercase; letter-spacing:1px;">${itemCategory}</p>`;
+            
             if (media.tagName === 'VIDEO') {
                 fullImage.style.display = 'none';
                 fullVideo.style.display = 'block';
                 fullVideo.src = media.src;
                 fullVideo.play();
-                viewerCaption.textContent = media.parentElement.querySelector('h3').textContent;
             } else {
                 fullVideo.style.display = 'none';
                 fullVideo.pause();
                 fullImage.style.display = 'block';
                 fullImage.src = media.src;
-                viewerCaption.textContent = media.alt || media.parentElement.querySelector('h3').textContent;
             }
             
             document.body.style.overflow = 'hidden'; // Prevent scrolling
